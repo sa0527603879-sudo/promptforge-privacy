@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PromptForge — מדיניות פרטיות</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1a1f2b; --muted: #5b6780;
+    --line: #e3e7ef; --accent: #6366f1; --card: #f7f8fb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0b0f17; --fg: #e9eef8; --muted: #97a3bb;
+            --line: #232a38; --accent: #8b8ff7; --card: #121826; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 48px 20px 96px;
+    background: var(--bg); color: var(--fg);
+    font: 16px/1.75 "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; }
+  h1 { font-size: 30px; margin: 0 0 6px; letter-spacing: -.02em; }
+  h2 { font-size: 19px; margin: 40px 0 12px; padding-top: 20px; border-top: 1px solid var(--line); }
+  h3 { font-size: 15px; margin: 24px 0 6px; color: var(--accent); }
+  .sub { color: var(--muted); margin: 0 0 32px; font-size: 14px; }
+  ul { padding-inline-start: 22px; margin: 10px 0; }
+  li { margin-bottom: 7px; }
+  code { font-family: ui-monospace, Consolas, monospace; font-size: .89em;
+         background: var(--card); padding: 2px 6px; border-radius: 5px;
+         direction: ltr; display: inline-block; }
+  .card { background: var(--card); border: 1px solid var(--line);
+          border-radius: 12px; padding: 18px 22px; margin: 18px 0; }
+  .en { direction: ltr; text-align: left; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14.5px; }
+  th, td { text-align: start; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  .no { color: #16a34a; font-weight: 600; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>מדיניות פרטיות — PromptForge</h1>
+  <p class="sub">עודכן לאחרונה: 7 באוגוסט 2026 · גרסה 0.1</p>
+
+  <div class="card">
+    <p style="margin:0"><strong>בקצרה:</strong> אין שרת ואין חשבון. התוסף לא אוסף עליך מידע ולא שולח
+    שום דבר למפתח. ההגדרות שלך נשמרות במחשב שלך בלבד. מידע יוצא החוצה רק ברגע שאתה לוחץ
+    על כפתור השיפור, ואז הוא נשלח ישירות לספק הבינה המלאכותית שאתה בחרת, עם המפתח שלך.</p>
+  </div>
+
+  <h2>מי מפעיל את השירות</h2>
+  <p>אף אחד. אין שרת מרכזי, אין מסד נתונים ואין הרשמה. התוסף רץ כולו בדפדפן שלך,
+  ולמפתח אין גישה לשום נתון שעובר דרכו.</p>
+
+  <h2>איזה מידע נשמר, ואיפה</h2>
+  <p>הכול נשמר מקומית ב־<code>chrome.storage.local</code>, ולעולם לא מסונכרן בין מכשירים
+  ולא נשלח החוצה:</p>
+  <table>
+    <tr><th>מה</th><th>למה זה נחוץ</th></tr>
+    <tr><td>מפתח ה-API שלך</td><td>כדי לפנות לספק הבינה המלאכותית בשמך</td></tr>
+    <tr><td>הספק והמודל שבחרת</td><td>העדפה</td></tr>
+    <tr><td>מצב "קריאת ההקשר בשיחה"</td><td>העדפה — דלוק או כבוי</td></tr>
+  </table>
+  <p>זו הרשימה המלאה. הסרת התוסף מוחקת את כולה מיידית.</p>
+  <p>הפרומפטים שלך והתוצאות <strong>אינם נשמרים בשום מקום</strong>, לא במחשב ולא מחוצה לו.</p>
+
+  <h2>מה נשלח החוצה, ומתי</h2>
+  <p>מידע עוזב את הדפדפן <strong>רק בעקבות פעולה יזומה שלך</strong> — לחיצה על כפתור השיפור
+  או הקשה על קיצור המקלדת. אין שליחה ברקע, אין שליחה בזמן הקלדה, ואין שליחה אוטומטית
+  מכל סוג אחר.</p>
+
+  <h3>לאן</h3>
+  <p>ישירות לספק שבחרת, ורק אליו:</p>
+  <ul>
+    <li><code>api.anthropic.com</code> (Anthropic)</li>
+    <li><code>api.openai.com</code> (OpenAI)</li>
+    <li><code>generativelanguage.googleapis.com</code> (Google Gemini)</li>
+  </ul>
+  <p>אלה שלושת היעדים היחידים שהתוסף פונה אליהם. השימוש שלהם בנתונים כפוף
+  למדיניות הפרטיות שלהם, לא לזו.</p>
+
+  <h3>מה בדיוק נשלח</h3>
+  <ul>
+    <li><strong>הטקסט שכתבת</strong> בתיבת הפרומפט.</li>
+    <li><strong>שם האתר שאתה נמצא בו</strong>, מתוך רשימת האתרים הנתמכים — כדי שהתוצאה תתאים
+        לסוג הפלט של אותו אתר. נשלח שם האתר בלבד, לא הכתובת המלאה.</li>
+    <li><strong>עד 1200 תווים מהטקסט שמוצג על המסך</strong>, ורק אם האפשרות
+        "קריאת ההקשר בשיחה" דלוקה בהגדרות. זה מה שמאפשר לבקשת המשך כמו "תקצר את זה"
+        להפוך לפרומפט שעומד בפני עצמו.</li>
+  </ul>
+
+  <h2>קריאת ההקשר בשיחה</h2>
+  <p>האפשרות הזו דלוקה כברירת מחדל, ואפשר לכבות אותה בהגדרות בכל רגע. כשהיא דלוקה:</p>
+  <ul>
+    <li>הקריאה מתרחשת <strong>רק ברגע שאתה מבקש שיפור</strong>. לא בטעינת הדף, לא בהקלדה, ולא בטיימר.</li>
+    <li>נקרא רק מה שמוצג על המסך, ורק החלק האחרון שלו — עד 1200 תווים.</li>
+    <li>הטקסט נכנס לבקשה אחת ונעלם. הוא לא נשמר, לא נצבר ולא נשלח לשום מקום אחר.</li>
+    <li>כשהיא כבויה, נשלח אך ורק הטקסט שכתבת בתיבה.</li>
+  </ul>
+
+  <h2>איפה התוסף רץ</h2>
+  <p>התוסף פועל אך ורק ב־32 אתרי הבינה המלאכותית שמפורטים בדף החנות. הוא אינו מבקש
+  ואינו מקבל גישה לשום אתר אחר שאתה גולש בו.</p>
+
+  <h2>המפתח שלך</h2>
+  <p>המפתח נשמר במחשב שלך ומשמש רק לאימות מול הספק שבחרת. הבקשה יוצאת מתוך התוסף עצמו
+  ולא מתוך הדף, ולכן <strong>האתר שאתה נמצא בו לא רואה את המפתח שלך</strong> ולא יכול לגשת אליו.</p>
+
+  <h2>הרשאות ולמה הן נחוצות</h2>
+  <table>
+    <tr><th>הרשאה</th><th>למה</th></tr>
+    <tr><td><code>activeTab</code></td><td>לקרוא את השדה שאתה כותב בו ולכתוב אליו בחזרה, בלשונית הפעילה בלבד ורק בעקבות פעולה שלך</td></tr>
+    <tr><td><code>storage</code></td><td>לשמור את המפתח וההעדפות שלך מקומית</td></tr>
+    <tr><td>שלושת שרתי הספקים</td><td>לשלוח את הבקשה לספק שבחרת</td></tr>
+  </table>
+
+  <h2>מה אנחנו לא עושים</h2>
+  <ul>
+    <li><span class="no">אין</span> איסוף נתונים לצורכי אנליטיקה או מדידה</li>
+    <li><span class="no">אין</span> מכירה או העברה של מידע לצדדים שלישיים</li>
+    <li><span class="no">אין</span> פרסום, מעקב או פרופיילינג</li>
+    <li><span class="no">אין</span> שימוש בנתונים שלך לאימון מודלים</li>
+    <li><span class="no">אין</span> הרצת קוד שמורד מהאינטרנט — כל הקוד ארוז בתוך התוסף</li>
+    <li><span class="no">אין</span> שרת, חשבון או הרשמה</li>
+  </ul>
+
+  <h2>ילדים</h2>
+  <p>זהו כלי עבודה, ואינו מיועד לשימוש מתחת לגיל 13.</p>
+
+  <h2>שינויים</h2>
+  <p>עדכון למדיניות יפורסם בעמוד הזה עם תאריך מעודכן.</p>
+
+  <h2>יצירת קשר</h2>
+  <p>שאלות בנושא פרטיות: <a href="mailto:sa0527603879@gmail.com?subject=PromptForge%20privacy">sa0527603879@gmail.com</a></p>
+
+  <hr style="margin:56px 0 28px; border:0; border-top:1px solid var(--line)" />
+
+  <section class="en">
+    <h2 style="border:0; padding-top:0">English summary</h2>
+
+    <p>PromptForge collects no personal data, operates no server, and has no accounts.
+    Your settings — API key, chosen provider and model, and the context toggle — are stored
+    only in <code>chrome.storage.local</code> on your own machine and are never synced or
+    transmitted to the developer. Prompts and results are never stored anywhere.</p>
+
+    <p>Data leaves your browser <strong>only when you click refine or press the keyboard
+    shortcut</strong>, and only to the AI provider you selected (Anthropic, OpenAI, or Google),
+    authenticated with your own API key. Those three API endpoints are the only external hosts
+    the extension ever contacts.</p>
+
+    <p>What is sent: the prompt text you wrote; the name of which supported site you are on, so
+    the output matches what that site generates; and, when the "read conversation context"
+    setting is enabled, up to 1200 characters of the text currently visible on that page. The
+    context is read only at the moment you request a refinement — never on page load, while
+    typing, or on a timer — is used for that single request, and is never stored. The setting
+    can be turned off, after which only the text you typed is sent.</p>
+
+    <p>The extension runs only on the 32 AI generation sites listed on its store page. It
+    requests no access to any other site. The API request is made from the extension's own
+    service worker, so the page you are on never sees your key.</p>
+
+    <p>There is no analytics, no tracking, no advertising, no sale or transfer of data to third
+    parties, no use of your data for model training, and no remotely hosted code.</p>
+
+    <p>Contact: <a href="mailto:sa0527603879@gmail.com?subject=PromptForge%20privacy">sa0527603879@gmail.com</a></p>
+  </section>
+
+</main>
+</body>
+</html>
