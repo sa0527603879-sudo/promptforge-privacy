@@ -35,7 +35,41 @@
 - **Netlify** — Site configuration ← Environment variables
 - **Supabase Edge Functions** — Function secrets
 - **שרת משלכם** — מנגנון ה-secrets של הפלטפורמה
-- **מקומית** — `cp smoove/.env.example .env` ומילוי הערך. הקובץ gitignored
+- **מקומית** — קובץ `.env`, ראו למטה. הוא gitignored
+
+## הרצה מקומית
+
+הדרך העדיפה היא קובץ `.env`, כדי שהמפתח לא יופיע בשורת הפקודה בכלל. צריך Node 20.6
+ומעלה:
+
+```bash
+cp smoove/.env.example .env      # ואז לפתוח ולמלא את SMOOVE_API_KEY
+npm run smoove -- verify
+```
+
+`npm run smoove` טוען את `.env` אוטומטית, וממשיך בלעדיו אם הוא לא קיים.
+
+לחלופין, משתנה סביבה ישירות. התחביר שונה בין מעטפות:
+
+```bash
+# macOS / Linux
+SMOOVE_API_KEY=xxx node smoove/cli.js verify
+```
+
+```bat
+REM Windows CMD — בלי מרכאות, בלי רווחים מסביב ל-=
+set SMOOVE_API_KEY=xxx
+node smoove\cli.js verify
+```
+
+```powershell
+# Windows PowerShell
+$env:SMOOVE_API_KEY = "xxx"
+node smoove/cli.js verify
+```
+
+התחביר של `KEY=value command` עובד רק ב-bash. ב-CMD הוא ייכשל עם
+`is not recognized as an internal or external command`.
 
 ## שימוש
 

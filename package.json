@@ -8,6 +8,6 @@
     "node": ">=18"
   },
   "scripts": {
-    "smoove": "node smoove/cli.js"
+    "smoove": "node --env-file-if-exists=.env smoove/cli.js"
   }
 }
