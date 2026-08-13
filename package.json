@@ -1,0 +1,13 @@
+{
+  "name": "promptforge-privacy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Privacy policy page for the PromptForge Chrome extension, plus the organization's smoove email integration",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "smoove": "node smoove/cli.js"
+  }
+}
