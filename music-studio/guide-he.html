@@ -245,6 +245,11 @@ ul.plain li::marker{color:var(--lamp);}
   border:1px solid var(--line-soft);
   padding:1px 6px;
   overflow-wrap:anywhere;
+  /* Paths are LTR. Without isolation the bidi algorithm drags leading and
+     trailing punctuation to the wrong end: __startup.lua renders as
+     startup.lua__, and %APPDATA%\REAPER\ loses its opening percent. */
+  direction:ltr;
+  unicode-bidi:isolate;
 }
 kbd{
   font-family:"Miriam Libre",sans-serif;font-size:.85em;font-weight:700;
@@ -316,6 +321,16 @@ kbd{
   margin-bottom:12px;
 }
 .fast h2{margin:0 0 10px;font-size:1.45rem;}
+.fast-done{
+  background:var(--signal);
+  color:var(--on-lamp);
+  padding:12px 16px;
+  border-radius:3px;
+  margin:14px 0;
+  font-size:.96rem;
+}
+.fast-done b{color:var(--on-lamp);}
+.fast-done kbd{background:rgba(255,255,255,.16);color:var(--on-lamp);border-color:transparent;}
 .fast p{color:var(--ink-2);}
 .fast .cmd{margin-block:12px;}
 
@@ -490,13 +505,20 @@ footer{
     </div>
 
     <p>
-      אם הכול עבר — <b>מדלגים ישר לשלב 5</b>. הסקריפט לא דורס שרתים אחרים שכבר מוגדרים לך
-      בקלוד, ושומר גיבוי של קובץ ההגדרות לפני כל שינוי. אפשר להריץ אותו שוב בלי נזק.
+      הסקריפט לא דורס כלום: שרתים אחרים שכבר מוגדרים לך בקלוד נשארים, וכל קובץ שנוגעים
+      בו מגובה קודם. אפשר להריץ אותו שוב כמה פעמים שרוצים בלי נזק.
     </p>
 
     <div class="note">
-      <b>עדיין צריך לעשות ביד:</b> לסגור ולפתוח את Claude Desktop, ולטעון את הגשר בתוך
-      REAPER — שני דברים שסקריפט לא יכול לעשות במקומך. שניהם מוסברים בשלבים 3 ו‑4 למטה.
+      <b>והוא עושה גם משהו שהמדריך הידני לא:</b> מחבר את הגשר ל‑<span class="path">__startup.lua</span>
+      של REAPER. מהרגע הזה <b>הגשר נטען לבד בכל פתיחה של REAPER</b> — אתה כבר לא צריך
+      ללכת ל‑<kbd>Actions</kbd> → <kbd>Load ReaScript</kbd> אף פעם. זו הטעות הכי נפוצה
+      בהתקנה הזאת, והיא פשוט נעלמת.
+    </div>
+
+    <div class="fast-done">
+      <b>אחרי שהסקריפט סיים, נשאר לך דבר אחד:</b> לפתוח את REAPER.
+      ואז לשאול את קלוד «כמה טראקים יש לי בפרויקט?»
     </div>
 
     <p style="margin-bottom:0">
@@ -597,6 +619,11 @@ footer{
         <b>לזכור לתמיד:</b> בכל פעם שאתה פותח את REAPER מחדש, צריך להריץ את הסקריפט שוב
         (<kbd>Actions</kbd> → <kbd>Show action list</kbd> → בוחרים אותו → <kbd>Run</kbd>).
         זו הטעות הכי נפוצה.
+      </div>
+      <div class="note">
+        <b>אפשר לבטל את הטרחה הזאת לגמרי:</b> אם הרצת את הסקריפט מ«המסלול המהיר» למעלה —
+        זה כבר מסודר. הוא מוסיף את הגשר לקובץ <span class="path">__startup.lua</span>
+        בתיקיית ה‑Scripts, ו‑REAPER מריץ אותו לבד בכל פתיחה.
       </div>
       <div class="warn">
         <b>וגם אחרי כל עדכון:</b> כשהחבילה מתעדכנת, צריך להריץ את הפקודה למעלה שוב
