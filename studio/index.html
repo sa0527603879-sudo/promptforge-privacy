@@ -160,7 +160,9 @@
     border: 1px solid var(--line); border-radius: var(--r-card); padding: 28px 26px;
     background: var(--paper); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   }
-  .feat:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: #D6D3CC; }
+  .feat:hover { transform: translateY(-3px); box-shadow: var(--shadow), 0 0 0 1px rgb(255 107 44 / .25); border-color: rgb(255 107 44 / .35); }
+  .feat:hover .ico { transform: scale(1.06); }
+  .feat .ico { transition: transform .2s ease; }
   .feat .ico {
     width: 42px; height: 42px; border-radius: 12px; background: #FFF1E9;
     display: grid; place-items: center; margin-block-end: 16px; color: var(--accent);
@@ -232,7 +234,12 @@
   }
 
   /* ---------- pricing ---------- */
-  .pricing { background: var(--ink); color: #fff; }
+  .pricing { background: var(--ink); color: #fff; position: relative; }
+  /* beam hairline: the "CTA with Glow" top-edge light */
+  .pricing::before, .final::after {
+    content: ""; position: absolute; inset-block-start: 0; inset-inline: 0; height: 1px;
+    background: linear-gradient(90deg, transparent 12%, rgb(255 107 44 / .55) 50%, transparent 88%);
+  }
   .pricing .sec-head h2 { color: #fff; }
   .plans {
     margin-block-start: 52px; display: grid; gap: 18px;
@@ -243,7 +250,13 @@
     background: var(--ink-soft); border: 1px solid var(--line-d);
     border-radius: var(--r-card); padding: 32px 28px; position: relative;
   }
-  .plan.best { border-color: rgb(255 107 44 / .55); background: #1C1A20; }
+  /* shine border: gradient stroke via double background, glow via shadow */
+  .plan.best {
+    border: 1px solid transparent;
+    background: linear-gradient(#1C1A20, #1C1A20) padding-box,
+                linear-gradient(155deg, rgb(255 107 44 / .9), rgb(255 255 255 / .16) 45%, rgb(255 107 44 / .45)) border-box;
+    box-shadow: 0 0 44px -14px rgb(255 107 44 / .45);
+  }
   .plan.best::before {
     content: "הכי נבחר"; position: absolute; inset-block-start: -13px; inset-inline-start: 28px;
     background: var(--accent); color: #fff; font-family: "Heebo", sans-serif; font-weight: 700;
