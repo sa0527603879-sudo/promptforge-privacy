@@ -1,0 +1,11 @@
+# The Netlify project for this repo serves the "עד מחר" studio landing page,
+# so the publish root is studio/ rather than the repository root (the repo root
+# index.html is the PromptForge privacy policy, published separately).
+[build]
+  publish = "studio"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
