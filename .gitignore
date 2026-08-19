@@ -1,0 +1,11 @@
+# Secrets. The smoove API key belongs in the runtime environment, never in the
+# repository — this repo is public, and git history keeps deleted files forever.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+node_modules/
+npm-debug.log*
+.DS_Store
